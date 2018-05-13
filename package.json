@@ -1,7 +1,7 @@
 {
   "name": "react-parcel-starter",
   "version": "1.0.0",
-  "description": "ReactJS project starter developed with ParcelJS. ESlint and PostCSS integration.",
+  "description": "Exercise with React following the Udemy tutotial from CodeRevolution ",
   "main": "index.html",
   "scripts": {
     "start": "parcel src/index.html",
@@ -12,9 +12,9 @@
   },
   "keywords": [
     "react",
-    "starter",
+    "exercise",
     "parcel",
-    "testing"
+    "redux"
   ],
   "author": "@silvestrevivo",
   "license": "ISC",
