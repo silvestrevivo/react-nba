@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import Header from '../../components/Header'
 import PropTypes from 'prop-types'
-
 import Aux from '../aux'
+import Footer from '../../components/Footer'
 
 class Layout extends Component {
   state = {
@@ -17,7 +17,7 @@ class Layout extends Component {
           onHideNav={() => this.setState({ showNav: false })}
           onOpenNav={() => this.setState({ showNav: true })} />
         {this.props.children}
-        Footer
+        <Footer />
       </Aux>
     )
   }
