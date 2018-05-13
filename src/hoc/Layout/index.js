@@ -5,11 +5,17 @@ import PropTypes from 'prop-types'
 import Aux from '../aux'
 
 class Layout extends Component {
-  state = {}
+  state = {
+    showNav: false
+  }
+
   render () {
     return (
       <Aux>
-        <Header />
+        <Header
+          showNav={this.state.showNav}
+          onHideNav={() => this.setState({ showNav: false })}
+          onOpenNav={() => this.setState({ showNav: true })} />
         {this.props.children}
         Footer
       </Aux>
