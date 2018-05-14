@@ -21,7 +21,8 @@ const SliderTemplates = (props) => {
     arrows: false,
     speed: 500,
     slideToShow: 1,
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    ...props.settings
   }
 
   switch (props.type) {
@@ -55,6 +56,7 @@ const SliderTemplates = (props) => {
 
 SliderTemplates.propTypes = {
   data: PropTypes.array,
-  type: PropTypes.string
+  type: PropTypes.string,
+  settings: PropTypes.object
 }
 export default SliderTemplates
