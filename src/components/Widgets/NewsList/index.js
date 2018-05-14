@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-// import { CSSTransition, TransitionGroup } from 'react-transition-group'
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import Button from '../../../components/Widgets/Buttons'
 
 class NewsList extends Component {
   state = {
@@ -36,13 +37,21 @@ class NewsList extends Component {
       case 'card':
         template = this.state.items.map((item, i) => {
           return (
-            <div key={i}>
-              <div className="newsList_item">
-                <Link to={`/articles/${item.id}`}>
-                  <h2>{item.title}</h2>
-                </Link>
+            <CSSTransition
+              key={i}
+              classNames={{
+                enter: 'newsList_wrapper',
+                enterActive: 'newsList_wrapper_enter'
+              }}
+              timeout={500}>
+              <div>
+                <div className="newsList_item">
+                  <Link to={`/articles/${item.id}`}>
+                    <h2>{item.title}</h2>
+                  </Link>
+                </div>
               </div>
-            </div>
+            </CSSTransition>
           )
         })
         break
@@ -55,10 +64,13 @@ class NewsList extends Component {
   render () {
     return (
       <div>
-        {this.renderNews(this.props.type)}
-        <div onClick={this.loadMore}>
-          LOAD MORE
-        </div>
+        <TransitionGroup
+          component="div"
+          className="list"
+        >
+          {this.renderNews(this.props.type)}
+        </TransitionGroup>
+        <Button type="loadmore" loadMore={this.loadMore} cta="Load More News" />
       </div>
     )
   }

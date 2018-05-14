@@ -105,3 +105,29 @@ footer {
     text-decoration: none;
   }
 }
+
+
+.newsList_wrapper{
+  box-sizing: border-box;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all .5s ease-in;
+}
+
+.newsList_wrapper_enter{
+  opacity: 1;
+  transform: translateX(0%)
+}
+
+
+.blue_btn{
+  text-align: center;
+  background-color: #2196f3;
+  border-bottom: 1px solid #d7d7d7;
+  font-weight: 500;
+  color: #fff;
+  padding: 9px;
+  cursor: pointer;
+  box-sizing: border-box;
+  font-size: 15px;
+}
