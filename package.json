@@ -6,6 +6,7 @@
   "scripts": {
     "start": "parcel src/index.html",
     "build": "parcel build src/index.html --out-dir build/ --public-url ./",
+    "server": "json-server --watch db.json",
     "test": "jest --watchAll",
     "coverage": "test -- --coverage",
     "precommit": "lint-staged"
@@ -60,6 +61,7 @@
     ]
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "classnames": "^2.2.5",
     "node-class": "^0.3.12",
     "prop-types": "^15.6.1",
