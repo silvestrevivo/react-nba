@@ -1,9 +1,10 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import FontAwesome from 'react-fontawesome'
 import { Link } from 'react-router-dom'
 import Aux from '../../hoc/aux'
 
-const SideNavItems = () => {
+const SideNavItems = (props) => {
   const items = [
     {
       type: 'option',
@@ -41,7 +42,7 @@ const SideNavItems = () => {
     return items.map((item, i) => {
       return (
         <div className={item.type} key={i}>
-          <Link to={item.link}>
+          <Link to={item.link} onClick={props.onHideNav}>
             <FontAwesome name={item.icon} />{item.text}
           </Link>
         </div>
@@ -54,6 +55,10 @@ const SideNavItems = () => {
       {showItems()}
     </Aux>
   )
+}
+
+SideNavItems.propTypes = {
+  onHideNav: PropTypes.func
 }
 
 export default SideNavItems
