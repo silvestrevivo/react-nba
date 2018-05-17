@@ -28,7 +28,7 @@ const CardInfo = ({ teams, team, date }) => {
 CardInfo.propTypes = {
   teams: PropTypes.array,
   team: PropTypes.number,
-  date: PropTypes.str
+  date: PropTypes.string
 }
 
 export default CardInfo

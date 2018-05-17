@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Button = (props) => {
   let template = null
@@ -9,6 +10,14 @@ const Button = (props) => {
         <div className="blue_btn" onClick={props.loadMore}>
           {props.cta}
         </div>
+      )
+      break
+    case 'linkTo':
+      template = (
+        <Link to={props.linkTo}
+          className="blue_btn" >
+          {props.cta}
+        </Link>
       )
       break
     default:
