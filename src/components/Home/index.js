@@ -23,7 +23,7 @@ const Home = () => {
       <VideosList
         type="card"
         title
-        loadmore={false}
+        loadmore
         start={0}
         ammount={3}
       />
