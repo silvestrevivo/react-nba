@@ -39,14 +39,16 @@ class VideosList extends Component {
         })
     }
 
-    axios.get(`http://localhost:3000/videos/?_start=${start}&_end=${end}`)
-      .then(response => {
-        this.setState({
-          videos: [...this.state.videos, ...response.data],
-          start,
-          end
+    if (start < 9) {
+      axios.get(`http://localhost:3000/videos/?_start=${start}&_end=${end}`)
+        .then(response => {
+          this.setState({
+            videos: [...this.state.videos, ...response.data],
+            start,
+            end
+          })
         })
-      })
+    }
   }
 
   renderVideos = () => {
