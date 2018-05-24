@@ -6,7 +6,7 @@ import Body from './body'
 
 class NewsArticles extends Component {
   static propTypes = {
-    match: PropTypes.string
+    match: PropTypes.object
   }
 
   state = {
@@ -31,8 +31,6 @@ class NewsArticles extends Component {
 
   render () {
     const { article, team } = this.state
-
-    console.log(this.state)
     return (
       <div className="articleWrapper">
         <Header teamData={team[0]} date={article.date} author={article.author} />
