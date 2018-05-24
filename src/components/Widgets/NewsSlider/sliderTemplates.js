@@ -12,22 +12,22 @@ const image = {
   '2': image2
 } // this way importing images to make compatible with parceljs
 
-const SliderTemplates = (props) => {
+const SliderTemplates = ({ data, type, settings }) => {
   let template = null
 
-  const settings = {
+  const settingsSlider = {
     dots: true,
     infinite: true,
     arrows: false,
     speed: 500,
     slideToShow: 1,
     slidesToScroll: 1,
-    ...props.settings
+    ...settings
   }
 
-  switch (props.type) {
+  switch (type) {
     case 'featured':
-      template = props.data.map((item, i) => {
+      template = data.map((item, i) => {
         return (
           <div key={i}>
             <div className="featured_item">
@@ -48,7 +48,7 @@ const SliderTemplates = (props) => {
   }
 
   return (
-    <Slick {...settings}>
+    <Slick {...settingsSlider}>
       {template}
     </Slick>
   )

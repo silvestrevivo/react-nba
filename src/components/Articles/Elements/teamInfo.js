@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const TeamInfo = (props) => {
+const TeamInfo = ({ team }) => {
   return (
     <div className="articlesTeamHeader">
       <div className="left" style={{
@@ -10,8 +10,8 @@ const TeamInfo = (props) => {
         img
       </div>
       <div className="right">
-        <div><span>{props.team.city} {props.team.name}</span></div>
-        <div><strong>W{props.team.stats[0].wins} - L{props.team.stats[0].defeats}</strong></div>
+        <div><span>{team.city} {team.name}</span></div>
+        <div><strong>W{team.stats[0].wins} - L{team.stats[0].defeats}</strong></div>
       </div>
     </div>
   )

@@ -26,8 +26,8 @@ const image = {
   '9': image9
 } // this way importing images to make compatible with parceljs
 
-const VideosListTemplate = (props) => {
-  return props.data.map((item, i) => {
+const VideosListTemplate = ({ data, teams }) => {
+  return data.map((item, i) => {
     return (
       <Link to={`/videos/${item.id}`} key={i}>
         <div className="videoListItem_wrapper">
@@ -35,7 +35,7 @@ const VideosListTemplate = (props) => {
             <div />
           </div>
           <div className="right">
-            <CardInfo teams={props.teams} team={item.team} date={item.date} />
+            <CardInfo teams={teams} team={item.team} date={item.date} />
             <h2>{item.title}</h2>
           </div>
         </div>
@@ -45,7 +45,8 @@ const VideosListTemplate = (props) => {
 }
 
 VideosListTemplate.propTypes = {
-  data: PropTypes.array
+  data: PropTypes.array,
+  teams: PropTypes.array
 }
 
 export default VideosListTemplate

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import Header from '../../components/Header'
 import PropTypes from 'prop-types'
 import Aux from '../aux'
+import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 
 class Layout extends Component {

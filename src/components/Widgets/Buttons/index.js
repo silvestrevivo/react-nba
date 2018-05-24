@@ -1,22 +1,23 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
-const Button = (props) => {
+const Button = ({ type, loadMore, cta, linkTo }) => {
   let template = null
 
-  switch (props.type) {
+  switch (type) {
     case 'loadmore':
       template = (
-        <div className="blue_btn" onClick={props.loadMore}>
-          {props.cta}
+        <div className="blue_btn" onClick={loadMore}>
+          {cta}
         </div>
       )
       break
     case 'linkTo':
       template = (
-        <Link to={props.linkTo}
+        <Link to={linkTo}
           className="blue_btn" >
-          {props.cta}
+          {cta}
         </Link>
       )
       break
@@ -24,6 +25,13 @@ const Button = (props) => {
       template = null
   }
   return template
+}
+
+Button.propTypes = {
+  type: PropTypes.string,
+  loadMore: PropTypes.func,
+  cta: PropTypes.string,
+  linkTo: PropTypes.string
 }
 
 export default Button

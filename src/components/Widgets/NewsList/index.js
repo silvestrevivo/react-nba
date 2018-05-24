@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import Aux from '../../../hoc/aux'
 import Button from '../../../components/Widgets/Buttons'
 import CardInfo from '../CardInfo'
 
@@ -55,14 +56,14 @@ class NewsList extends Component {
                 enterActive: 'newsList_wrapper_enter'
               }}
               timeout={500}>
-              <div>
+              <Aux>
                 <div className="newsList_item">
                   <Link to={`/articles/${item.id}`}>
                     <CardInfo teams={this.state.teams} team={item.team} date={item.date} />
                     <h2>{item.title}</h2>
                   </Link>
                 </div>
-              </div>
+              </Aux>
             </CSSTransition>
           )
         })
@@ -75,7 +76,7 @@ class NewsList extends Component {
 
   render () {
     return (
-      <div>
+      <Aux>
         <TransitionGroup
           component="div"
           className="list"
@@ -83,7 +84,7 @@ class NewsList extends Component {
           {this.renderNews(this.props.type)}
         </TransitionGroup>
         <Button type="loadmore" loadMore={this.loadMore} cta="Load More News" />
-      </div>
+      </Aux>
     )
   }
 }

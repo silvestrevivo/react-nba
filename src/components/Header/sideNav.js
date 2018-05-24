@@ -4,14 +4,14 @@ import Aux from '../../hoc/aux'
 import SideNav from 'react-simple-sidenav'
 import SideNavItems from './sideNavItems'
 
-const SideNavigation = (props) => {
+const SideNavigation = ({ showNav, onHideNav }) => {
   return (
     <Aux>
       <SideNav
-        showNav={props.showNav}
-        onHideNav={props.onHideNav}
+        showNav={showNav}
+        onHideNav={onHideNav}
         navStyle={{ backgroundColor: '#242424', maxWidth: '300px' }}>
-        <SideNavItems onHideNav={props.onHideNav} />
+        <SideNavItems onHideNav={onHideNav} />
       </SideNav>
     </Aux>
   )

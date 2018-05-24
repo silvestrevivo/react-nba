@@ -1,16 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const PostData = (props) => {
+const PostData = ({ data }) => {
   return (
     <div className="articlePostData">
       <div>
         Date:
-        <span>{props.data.date}</span>
+        <span>{data.date}</span>
       </div>
       <div>
         Author:
-        <span>{props.data.author}</span>
+        <span>{data.author}</span>
       </div>
     </div>
   )

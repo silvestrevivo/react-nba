@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import TeamInfo from '../../Elements/teamInfo'
 import PostData from '../../Elements/postData'
 
-const Header = (props) => {
+const Header = ({ teamData, date, author }) => {
   const teamInfo = (team) => {
     return team ? (
       <TeamInfo team={team} />
@@ -16,8 +16,8 @@ const Header = (props) => {
 
   return (
     <div>
-      {teamInfo(props.teamData)}
-      {postData(props.date, props.author)}
+      {teamInfo(teamData)}
+      {postData(date, author)}
     </div>
   )
 }
