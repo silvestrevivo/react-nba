@@ -34,7 +34,7 @@ class NewsArticles extends Component {
     return (
       <div className="articleWrapper">
         <Header teamData={team[0]} date={article.date} author={article.author} />
-        <Body />
+        <Body article={article} />
       </div>
     )
   }
